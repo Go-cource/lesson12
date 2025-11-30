@@ -7,6 +7,13 @@ func InsertXInMap(x int) {
 	}
 }
 
+func InsertXInMapInterface(x int) {
+	testmap := make(map[interface{}]int, 0)
+	for i := 0; i < x; i++ {
+		testmap[i] = i
+	}
+}
+
 func main() {
 	//any code
 }
