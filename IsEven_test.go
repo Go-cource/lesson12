@@ -11,7 +11,7 @@ func TestIsEven(t *testing.T) {
 
 	resultTrue := IsEven(2)
 	if resultTrue != "yes" {
-		t.Errorf("Error in test2 - expected: 'no', got: %s", resultTrue)
+		t.Errorf("Error in test2 - expected: 'yes', got: %s", resultTrue)
 	}
 	t.Log("Test2 finished")
 }
