@@ -3,15 +3,23 @@ package main
 import "testing"
 
 func TestIsEven(t *testing.T) {
-	result := IsEven(1)
-	if result != "no" {
-		t.Errorf("Error in test1 - expected: 'no', got: %s", result)
+	var testcases = []struct {
+		text string
+		got  int
+		want string
+	}{
+		{"-5 - отрицательное", -5, "no"},
+		{"0 - zero", 0, "yes"},
+		{"2 - Even", 2, "yes"},
+		{"1 - Not Even", 1, "no"},
 	}
-	t.Log("Test1 finished")
+	for _, tc := range testcases {
 
-	resultTrue := IsEven(2)
-	if resultTrue != "yes" {
-		t.Errorf("Error in test2 - expected: 'yes', got: %s", resultTrue)
+		t.Run(tc.text, func(t *testing.T) {
+			result := IsEven(tc.got)
+			if result != tc.want {
+				t.Errorf("Error in test %s: got: %s want: %s", tc.text, result, tc.want)
+			}
+		})
 	}
-	t.Log("Test2 finished")
 }
