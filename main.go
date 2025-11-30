@@ -14,6 +14,13 @@ func InsertXInMapInterface(x int) {
 	}
 }
 
+func InsertXInSlice(x int) {
+	testmap := make([]int, 0)
+	for i := 0; i < x; i++ {
+		testmap = append(testmap, i)
+	}
+}
+
 func main() {
 	//any code
 }

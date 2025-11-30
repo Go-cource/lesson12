@@ -20,19 +20,36 @@ func BenchmarkInsertXInMap100000(b *testing.B) {
 	}
 }
 
-func BenchmarkInsertXInMapInterface100(b *testing.B) {
+// func BenchmarkInsertXInMapInterface100(b *testing.B) {
+// 	for i := 0; i < b.N; i++ {
+// 		InsertXInMapInterface(100)
+// 	}
+// }
+// func BenchmarkInsertXInMapInterface1000(b *testing.B) {
+// 	for i := 0; i < b.N; i++ {
+// 		InsertXInMapInterface(1000)
+// 	}
+// }
+
+// func BenchmarkInsertXInMapInterface100000(b *testing.B) {
+// 	for i := 0; i < b.N; i++ {
+// 		InsertXInMapInterface(100000)
+// 	}
+// }
+
+func BenchmarkInsertXInSilce100(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		InsertXInMapInterface(100)
+		InsertXInSlice(100)
 	}
 }
-func BenchmarkInsertXInMapInterface1000(b *testing.B) {
+func BenchmarkInsertXInSilce1000(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		InsertXInMapInterface(1000)
+		InsertXInSlice(1000)
 	}
 }
 
-func BenchmarkInsertXInMapInterface100000(b *testing.B) {
+func BenchmarkInsertXInSilce100000(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		InsertXInMapInterface(100000)
+		InsertXInSlice(100000)
 	}
 }
