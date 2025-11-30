@@ -2,24 +2,19 @@ package main
 
 import "testing"
 
-func TestIsEven(t *testing.T) {
-	var testcases = []struct {
-		text string
-		got  int
-		want string
-	}{
-		{"-5 - отрицательное", -5, "no"},
-		{"0 - zero", 0, "yes"},
-		{"2 - Even", 2, "yes"},
-		{"1 - Not Even", 1, "no"},
+func BenchmarkInsertXInMap100(b *testing.B) {
+	for i := 0; i < b.N; i++{
+		InsertXInMap(100)
 	}
-	for _, tc := range testcases {
+}
+func BenchmarkInsertXInMap1000(b *testing.B) {
+	for i := 0; i < b.N; i++{
+		InsertXInMap(1000)
+	}
+}
 
-		t.Run(tc.text, func(t *testing.T) {
-			result := IsEven(tc.got)
-			if result != tc.want {
-				t.Errorf("Error in test %s: got: %s want: %s", tc.text, result, tc.want)
-			}
-		})
+func BenchmarkInsertXInMap100000(b *testing.B) {
+	for i := 0; i < b.N; i++{
+		InsertXInMap(100000)
 	}
 }
